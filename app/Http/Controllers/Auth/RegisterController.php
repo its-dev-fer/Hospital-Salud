@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'turno' => $data['turno'],
             'horario' => $data['horario'],
             'celular' => $data['celular'],
-            'num_casa' => $data['casa'],
+            'telefono_casa' => $data['casa'],
             'direccion' => $data['direccion'],
             'foto' => $data['foto'],
         ]);
