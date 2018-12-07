@@ -50,7 +50,7 @@
                 </tbody>
             </table>
         </div>
-
+        <!-- Insert -->
         <form action="{{route('insert')}}" method="POST">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -101,9 +101,61 @@
                 <input type="text" class="form-control" name="8" required>
             </div>
             @csrf
-            <input type="submit" value="Oprimir">
+            <input type="submit" value="Insertar">
         </form>
-
+        <!-- Update -->
+        <form action="{{route('insert')}}" method="POST">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de prog</span>
+                </div>
+                <input type="text" class="form-control" name="1" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de unidades</span>
+                </div>
+                <input type="text" class="form-control" name="2" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Caducidad</span>
+                </div>
+                <input type="text" class="form-control" name="3" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Defecto de conversión</span>
+                </div>
+                <input type="text" class="form-control" name="4" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de cs</span>
+                </div>
+                <input type="text" class="form-control" name="5" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de registro</span>
+                </div>
+                <input type="text" class="form-control" name="6" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre de quien desecha</span>
+                </div>
+                <input type="text" class="form-control" name="7" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del personal PBI</span>
+                </div>
+                <input type="text" class="form-control" name="8" required>
+            </div>
+            @csrf
+            <input type="submit" value="Actualizar">
+        </form>
         <div>
             <div style="display: flex">
                 <input type="checkbox"  id="1" value="show" checked="checked" onclick="_onclick(this.id)" >
