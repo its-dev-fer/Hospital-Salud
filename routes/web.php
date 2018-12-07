@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/desechos', 'DesechoUnidades@index');
+
+Route::post('/desechos', 'DesechoUnidades@insert')->name('insert');
