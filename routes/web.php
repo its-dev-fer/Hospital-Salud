@@ -20,5 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/desechos', 'DesechoUnidades@index');
-
-Route::post('/desechos', 'DesechoUnidades@insert')->name('insert');
+Route::prefix('desechos')->group(function () {
+    Route::post('insert', 'DesechoUnidades@insert')->name('insert');
+    Route::post('update', 'DesechoUnidades@update')->name('update');
+});
