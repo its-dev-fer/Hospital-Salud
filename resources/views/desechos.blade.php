@@ -13,9 +13,9 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col" id="col_1"># de unidades</th>
+                        <th scope="col" id="col_1"># de unidad</th>
                         <th scope="col" id="col_2"># de prog</th>
-                        <th scope="col" id="col_3"># de unidad</th>
+                        <th scope="col" id="col_3"># de unidades</th>
                         <th scope="col" id="col_4">Caducidad</th>
                         <th scope="col" id="col_5">Defecto de conversión</th>
                         <th scope="col" id="col_6"># de cs</th>
@@ -25,28 +25,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="row_1">sbadjkb</td>
-                        <td class="row_2">jksdh</td>
-                        <td class="row_3">sadas</td>
-                        <td class="row_4">dsffd</td>
-                        <td class="row_5">sdsa</td>
-                        <td class="row_6">dsad</td>
-                        <td class="row_7">eqewe</td>
-                        <td class="row_8">sads</td>
-                        <td class="row_9">asdsad</td>
-                    </tr>
-                    <tr>
-                        <td class="row_1">dsads</td>
-                        <td class="row_2">jksdh</td>
-                        <td class="row_3">sadas</td>
-                        <td class="row_4">dsffd</td>
-                        <td class="row_5">sdsa</td>
-                        <td class="row_6">sdsa</td>
-                        <td class="row_7">eqewe</td>
-                        <td class="row_8">sads</td>
-                        <td class="row_9">asdsad</td>
-                    </tr>
+                    @foreach ($arrayData as $data)
+                        <tr>
+                            <td class="row_1">{{ $data->id }}</td>
+                            <td class="row_2">{{ $data->num_prog }}</td>
+                            <td class="row_3">{{ $data->num_unidad }}</td>
+                            <td class="row_4">{{ $data->caducidad }}</td>
+                            <td class="row_5">{{ $data->defecto_conservacion }}</td>
+                            <td class="row_6">{{ $data->num_cs }}</td>
+                            <td class="row_7">{{ $data->num_registro }}</td>
+                            <td class="row_8">{{ $data->nombre_del_que_desecha }}</td>
+                            <td class="row_9">{{ $data->nombre_personal_pbi }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -102,59 +93,6 @@
             </div>
             @csrf
             <input type="submit" value="Insertar">
-        </form>
-        <!-- Update -->
-        <form action="{{route('insert')}}" method="POST">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de prog</span>
-                </div>
-                <input type="text" class="form-control" name="1" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de unidades</span>
-                </div>
-                <input type="text" class="form-control" name="2" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Caducidad</span>
-                </div>
-                <input type="text" class="form-control" name="3" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Defecto de conversión</span>
-                </div>
-                <input type="text" class="form-control" name="4" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de cs</span>
-                </div>
-                <input type="text" class="form-control" name="5" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de registro</span>
-                </div>
-                <input type="text" class="form-control" name="6" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre de quien desecha</span>
-                </div>
-                <input type="text" class="form-control" name="7" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del personal PBI</span>
-                </div>
-                <input type="text" class="form-control" name="8" required>
-            </div>
-            @csrf
-            <input type="submit" value="Actualizar">
         </form>
         <div>
             <div style="display: flex">
