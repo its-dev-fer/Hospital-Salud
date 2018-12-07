@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 class DesechoUnidades extends Controller{
     
     public function index(){
-        $data = \App\Desechos::pagination(1, 15)->get();
-        return view('desechos', ['arrayData'=>$data]);
+        return view('desechos');
     }
 
     public function insert(Request $request){
