@@ -26,7 +26,7 @@ class User extends Authenticatable
             $table->string('foto')->nullable();
         */
     protected $fillable = [
-        'name', 'email', 'password','rol','turno','horario','celular','telefono_casa','num_casa','direccion','foto',
+        'name', 'email', 'password','rol','turno','horario','celular','telefono_casa','direccion','foto',
     ];
 
     /**
