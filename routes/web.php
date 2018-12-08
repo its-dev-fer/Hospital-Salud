@@ -22,3 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/desechos', 'DesechoUnidades@index');
 
 Route::post('/desechos', 'DesechoUnidades@insert')->name('insert');
+
+
+
+Route::get('/personales', 'PersonalController@personales');
+Route::post('/alta', 'PersonalController@alta');
+Route::post('/baja', 'PersonalController@baja');
