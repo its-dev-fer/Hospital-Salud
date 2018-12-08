@@ -12,7 +12,7 @@ class DesechosTableSeeder extends Seeder
      * @return void
      */
     public function run(){
-        for($i = 0; $i < 50; $i++){
+        for($i = 0; $i < 20; $i++){
             $year = rand(2017, 2018);
             $month = rand(1, 12);
             $day = rand(1, 28);
@@ -22,7 +22,7 @@ class DesechosTableSeeder extends Seeder
             \DB::table('registro_desechos')->insert([
                 'num_prog' => str_random(10),
                 'num_unidad' => str_random(10),
-                'caducidad' => $date->format('Y-m-d H:i:s'),
+                'caducidad' => $date->format('Y-m-d H:i:s') ,
                 'defecto_conservacion' => str_random(10),
                 'num_cs' => str_random(10),
                 'num_registro' => str_random(10),
