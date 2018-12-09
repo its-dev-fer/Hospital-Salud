@@ -6,27 +6,27 @@ use Illuminate\Http\Request;
 
 class PersonalController extends Controller{
     public function personales(){
-        return view('administrador/personales', ['users' => \App\User::get()]);
+        $users = \DB::table('users')->where('rol', 'personal')->get();
+        return view('administrador/personales', ['users' => $users]);
     }
 
     public function alta(){
-        
+    
         $id = $_POST['id'];
         \DB::table('users')
                     ->where('id', $id)
-                    ->update(['estado' => 'aceptado']);
-                    //falta añadir el campo "estado" en la DB
-        return view('administrador/personales', ['users' => \App\User::get()]);
+                    ->update(['direccion' => 'activo']);
+        $users = \DB::table('users')->where('rol', 'personal')->get();
+        return  ['users' => $users];
     }
 
     public function baja(){
-        
         $id = $_POST['id'];
-
-        \DB::table('users')
+       \DB::table('users')
                     ->where('id', $id)
-                    ->update(['estado' => 'espera']);
-                    //falta añadir el campo "estado" en la DB
-        return view('administrador/personales', ['users' => \App\User::get()]);
+                    ->update(['direccion' => 'baja']);
+        $users = \DB::table('users')->where('rol', 'personal')->get();
+        return ['users' => $users];
     }
+
 }
