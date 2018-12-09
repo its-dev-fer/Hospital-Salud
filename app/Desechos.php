@@ -13,3 +13,4 @@ class Desechos extends Model
         return $query->whereBetween('id', [$start, $end]);
     }
 }
+ 

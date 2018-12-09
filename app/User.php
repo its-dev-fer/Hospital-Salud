@@ -15,8 +15,18 @@ class User extends Authenticatable
      *
      * @var array
      */
+    /*
+        $table->enum('rol',['personal','administrador']);
+            $table->enum('turno',['matutino','vespertino']);
+            $table->string('horario')->nullable();
+            $table->string('celular')->nullable();
+            $table->string('telefono_casa')->nullable();
+            $table->integer('num_casa')->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('foto')->nullable();
+        */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','rol','turno','horario','celular','telefono_casa','direccion','foto',
     ];
 
     /**
