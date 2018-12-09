@@ -1,10 +1,8 @@
 $(document).ready(function(){
-    $boton=$(this)
-
     $(".alta").click(function(){
         sendLocalRequest(
             $.parseJSON($(this).attr('data-user')).id,
-            '/alta',
+            'alta',
             $(this)
         )
     })
@@ -12,7 +10,7 @@ $(document).ready(function(){
     $(".baja").click(function(){
         sendLocalRequest(
             $.parseJSON($(this).attr('data-user')).id,
-            '/baja',
+            'baja',
             $(this)
         )
     })
@@ -27,7 +25,6 @@ function sendLocalRequest(userid, URL, boton){
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        dataType: 'json',
         data:{
             id: userid
         },
@@ -36,7 +33,8 @@ function sendLocalRequest(userid, URL, boton){
         }
     })
     .done(function(response){
-        boton.prop("disabled", false)     
+        boton.prop("disabled", false)  
+        //feeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeer :/
     })
     .fail(function(error){
         alert("Ups, algo ha salido mal. Inténtalo más tarde...")
