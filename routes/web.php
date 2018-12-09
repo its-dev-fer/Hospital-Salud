@@ -21,6 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/desechos', 'DesechoUnidades@index');
 Route::prefix('desechos')->group(function () {
-    Route::post('insert', 'DesechoUnidades@insert')->name('insert');
-    Route::post('update', 'DesechoUnidades@update')->name('update');
+    Route::get('insert', 'DesechoUnidades@insert')->name('insert');
+    Route::get('show', 'DesechoUnidades@show')->name('show');
 });
