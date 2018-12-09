@@ -24,3 +24,7 @@ Route::prefix('desechos')->group(function () {
     Route::get('insert', 'DesechoUnidades@insert')->name('insert');
     Route::get('show', 'DesechoUnidades@show')->name('show');
 });
+
+Route::get('/personales', 'PersonalController@personales');
+Route::post('/alta', 'PersonalController@alta');
+Route::post('/baja', 'PersonalController@baja');
