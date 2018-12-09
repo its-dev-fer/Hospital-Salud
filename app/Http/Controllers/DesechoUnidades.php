@@ -59,7 +59,7 @@ class DesechoUnidades extends Controller{
             }else{
                 $output  = '
                     <tr>
-                        <td align="center" colspan="9   ">Sin datos</td>
+                        <td align="center" colspan="9"><h1>Sin datos</h1></td>
                     </tr>
                 ';
             }
