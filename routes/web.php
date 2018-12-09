@@ -12,19 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return redirect('/home');
+})->middleware('tiene_sesion');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/desechos', 'DesechoUnidades@index');
+Route::get('/desechos', 'DesechoUnidades@index')->middleware('personal_quimico');
+Route::get('/compatibilidad','BitacoraDeCompatibilidadController@index')->middleware('personal_quimico');
+Route::get('/compatibilidad/{id}','BitacoraDeCompatibilidadController@view')->middleware('personal_quimico');
 Route::prefix('desechos')->group(function () {
     Route::get('insert', 'DesechoUnidades@insert')->name('insert');
     Route::get('show', 'DesechoUnidades@show')->name('show');
 });
 
-Route::get('/personales', 'PersonalController@personales');
-Route::post('/alta', 'PersonalController@alta');
-Route::post('/baja', 'PersonalController@baja');
+Route::get('/personales', 'PersonalController@personales')->middleware('administrador');
+Route::post('/alta', 'PersonalController@alta')->middleware('administrador');
+Route::post('/baja', 'PersonalController@baja')->middleware('administrador');

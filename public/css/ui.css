@@ -1,0 +1,133 @@
+.login_card{
+  width: 100%;
+  background-color: white;
+  -webkit-box-shadow: 0px 10px 38px -2px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 10px 38px -2px rgba(0,0,0,0.25);
+  box-shadow: 0px 10px 38px -2px rgba(0,0,0,0.25);
+  border-radius: 20px;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.login_card > form{
+  padding-top: 2em;
+}
+
+.no_select{
+  -webkit-touch-callout: none; /* iOS Safari */
+   -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+       -ms-user-select: none; /* Internet Explorer/Edge */
+           user-select: none; /* Non-prefixed version, currently
+                                 supported by Chrome and Opera */
+}
+
+.texto-degradado{
+  font-size: 30px;
+  background: -webkit-linear-gradient(#FF4B2B, #FF416C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.degradado_coral{
+  background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white !important;
+}
+
+.big_rounded_button{
+  padding: 0.5em;
+  font-size: 24px !important;
+  border-radius: 20px !important;
+}
+
+body{
+  background-color: #f9f9f9 !important;
+  overflow-y:hidden;
+}
+
+.full_screen{
+  height: calc(100vh - 8vh) !important;
+}
+
+.bordes{
+  border: solid 1px black;
+}
+.pb-4, .py-4 {
+    padding-bottom: 0 !important;
+}
+.pt-4, .py-4 {
+    padding-top: 0 !important;
+}
+#cpanel{
+  width: 101% !important;
+}
+.lado_izquierdo{
+  background-color: #efefef !important;
+  -webkit-box-shadow: 8px 5px 25px -6px rgba(0,0,0,0.25);
+  -moz-box-shadow: 8px 5px 25px -6px rgba(0,0,0,0.25);
+  box-shadow: 8px 5px 25px -6px rgba(0,0,0,0.25);
+}
+.lado_derecho{
+  border: solid 1px #dddddd;
+  background-color: #f7f7f7 !important;
+}
+.orange_btn{
+  background: #f12711;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.coral_btn{
+  background: #ff9966;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.pink_btn{
+  background: #ff4b1f;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff9068, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff9068, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.otro_orange_btn{
+  background: #FF4E50;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F9D423, #FF4E50);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F9D423, #FF4E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.blue_btn{
+  background: #fc00ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.izq_item{
+  margin-bottom: 1em;
+  width:100% !important;
+  text-decoration: none !important;
+  color: white !important;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 20px;
+}
+
+font-size: 30px;
+.izq_item > i{
+}
+.info_card{
+  border-radius: 2px;
+  border: solid 1px #dddddd;
+  background-color: white;
+  -webkit-box-shadow: 0px 5px 25px -6px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 5px 25px -6px rgba(0,0,0,0.25);
+  box-shadow: 0px 5px 25px -6px rgba(0,0,0,0.25);
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1.5em;
+}
+.single_icon{
+  padding-top: 0.25em;
+  font-size: 20px !important;
+  color: #f12711 ;
+}

@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Carbon\Carbon;
+use App\BitacoraCompatibilidad;
+use App\BitacoraEgresos;
+use App\Desechos;
 
 class HomeController extends Controller
 {
@@ -23,6 +28,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $bCount = BitacoraCompatibilidad::count() + BitacoraEgresos::count() + Desechos::count();
+        if(Carbon::now()->hour > 12){
+          $message = "Buenas tardes";
+        }else if(Carbon::now()->hour > 19){
+          $message = "Buenas noches";
+        }else{
+          $message = "Buenos días";
+        }
+        return view('home',[
+          'usersCount' =>  User::count(),
+          'bitacorasCount' => $bCount ,
+          'message' => $message
+        ]);
     }
 }

@@ -1,4 +1,29 @@
 $(document).ready(function(){
+  //Fer
+  $("#_2_welcome").click(function(){
+    $("#welcome_tab").show();
+    $("#notifications_tab").hide();
+  });
+
+  $("#_2_notifications").click(function(){
+    $("#welcome_tab").hide();
+    $("#notifications_tab").show();
+  });
+
+  $("#_2_bitacoras_menu").click(function(){
+    $("#welcome_tab").hide();
+    $("#notifications_tab").hide();
+    $("#bitacoras_tab").show();
+  });
+
+
+
+
+
+
+
+  //Aveno
+
     $boton=$(this)
 
     $(".alta").click(function(){
@@ -16,7 +41,7 @@ $(document).ready(function(){
             $(this)
         )
     })
-    
+
 })
 
 
@@ -36,7 +61,7 @@ function sendLocalRequest(userid, URL, boton){
         }
     })
     .done(function(response){
-        boton.prop("disabled", false)     
+        boton.prop("disabled", false)
     })
     .fail(function(error){
         alert("Ups, algo ha salido mal. Inténtalo más tarde...")
