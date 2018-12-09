@@ -21,16 +21,21 @@
                                 <tr>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->turno}}</td>
-                                    @if($user->email_verified_at == null)
-                                        <td> <button class="btn btn-danger alta" data-user='{"id": {{$user->id}}}' >
-                                            Aceptar solicitud
-                                        </button> </td>
-                                    @else
-                                        <td> <button type="button" class="btn btn-success baja" data-user='{"id": {{$user->id}}}'>
-                                                Dar de baja
+                                    <td>
+                                         @if($user->direccion == 'espera')
+                                            <button class="btn btn-warning alta" data-user='{"id": {{$user->id}}}' >
+                                                Aceptar solicitud
                                             </button>
-                                        </td>
-                                    @endif
+                                        @elseif($user->direccion == 'baja')
+                                            <button type="button" class="btn btn-danger alta" data-user='{"id": {{$user->id}}}'>
+                                                    Activar
+                                            </button>
+                                        @else
+                                            <button type="button" class="btn btn-success baja" data-user='{"id": {{$user->id}}}'>
+                                                    Baja
+                                            </button>
+                                        @endif
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
