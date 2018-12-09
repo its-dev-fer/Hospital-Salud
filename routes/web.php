@@ -20,10 +20,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/desechos', 'DesechoUnidades@index');
-
-Route::post('/desechos', 'DesechoUnidades@insert')->name('insert');
-
-
+Route::prefix('desechos')->group(function () {
+    Route::get('insert', 'DesechoUnidades@insert')->name('insert');
+    Route::get('show', 'DesechoUnidades@show')->name('show');
+});
 
 Route::get('/personales', 'PersonalController@personales');
 Route::post('/alta', 'PersonalController@alta');
