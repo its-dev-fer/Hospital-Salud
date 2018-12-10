@@ -5,9 +5,21 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Personales</div>
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-8">
+                      Personales
+                    </div>
+                    <div class="col-4">
+                      <a href="/alta" class="btn btn-success">
+                        <i class="fas fa-user-plus"></i>
+                        Agregar personal
+                      </a>
+                    </div>
+                  </div>
+                </div>
                 <div class="card-body">
-                    <div class="table-responsive center"> 
+                    <div class="table-responsive center">
                         <table class="table table-condensed">
                             <thead>
                             <tr>
@@ -17,27 +29,25 @@
                             </tr>
                             </thead>
                             <tbody>
+                              @if(count($users)>0)
                                 @foreach($users as $user)
-                                <tr>
+                                <tr id="{{ 'td_'.$user->id}}">
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->turno}}</td>
                                     <td>
-                                         @if($user->direccion == 'espera')
-                                            <button class="btn btn-warning alta" data-user='{"id": {{$user->id}}}' >
-                                                Aceptar solicitud
-                                            </button>
-                                        @elseif($user->direccion == 'baja')
-                                            <button type="button" class="btn btn-danger alta" data-user='{"id": {{$user->id}}}'>
-                                                    Activar
-                                            </button>
-                                        @else
-                                            <button type="button" class="btn btn-success baja" data-user='{"id": {{$user->id}}}'>
-                                                    Baja
-                                            </button>
-                                        @endif
+                                      @if($user->estado == 'activo')
+                                        <button type="button" class="btn btn-danger baja" data-user='{{$user->id}}'>Dar de baja</button>
+                                      @else
+                                        <button type="button" class="btn btn-success darAlta" data-user='{{$user->id}}'>Activar</button>
+                                      @endif
                                     </td>
                                 </tr>
                                 @endforeach
+                              @else
+                                <tr>
+                                  No hay usuarios
+                                </tr>
+                              @endif
                             </tbody>
                         </table>
                     </div>
@@ -47,6 +57,3 @@
     </div>
 </div>
 @endsection
-
-
-

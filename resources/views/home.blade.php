@@ -9,7 +9,7 @@
       <a id="_2_notifications" href="#" class="izq_item btn coral_btn"><i class="fas fa-bell"></i>&nbsp;Notificaciones</a>
       <a href="{{ url('/personales') }}" class="izq_item btn otro_orange_btn"><i class="fas fa-user"></i>&nbsp;Administrar personal</a>
       @endif
-      
+
       <a id="_2_bitacoras_menu" href="#" class="izq_item btn pink_btn"><i class="fas fa-pencil-alt"></i>&nbsp;Gestionar bitácoras</a>
     </div>
   </div>
@@ -18,7 +18,7 @@
   @else
   <div class="col-10 full_screen lado_derecho" id="welcome_tab" style="display:none">
   @endif
-    <div class="row">
+    <div class="row align-items-stretch">
       <div class="col-4">
         <div class="info_card">
           <div class="row">
@@ -26,7 +26,7 @@
               <i class="fas fa-users single_icon"></i>
             </div>
             <div class="col-10">
-              <h3>{{ $usersCount }} usuarios registrados</h3>
+              <h3>{{ $usersCount }} usuarios</h3>
             </div>
           </div>
         </div>
@@ -46,15 +46,8 @@
       </div>
 
       <div class="col-3">
-        <div class="info_card">
-          <div class="row">
-            <div class="col-1">
-              <i class="fas fa-handshake single_icon"></i>
-            </div>
-            <div class="col-10">
-              <h3>{{ $message }}</h3>
-            </div>
-          </div>
+        <div class="alert  alert-dark" id="importante" role="alert">
+          {{ $message }}
         </div>
       </div>
     </div>

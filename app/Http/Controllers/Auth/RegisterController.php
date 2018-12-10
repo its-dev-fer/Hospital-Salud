@@ -78,6 +78,7 @@ class RegisterController extends Controller
             'telefono_casa' => $data['casa'],
             'direccion' => $data['direccion'],
             'foto' => $data['foto'],
+            'estado' => "activo"
         ]);
     }
 }

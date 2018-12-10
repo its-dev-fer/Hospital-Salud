@@ -15,7 +15,7 @@ class Inicio
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check())
+        if(Auth::check()  && Auth::user()->estado == "activo")
           return $next($request);
         else
           return redirect('login');

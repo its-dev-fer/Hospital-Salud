@@ -1,5 +1,8 @@
 $(document).ready(function(){
   //Fer
+
+
+
   $("#_2_welcome").click(function(){
     $("#welcome_tab").show();
     $("#notifications_tab").hide();
@@ -17,30 +20,72 @@ $(document).ready(function(){
   });
 
 
+  $(document).delegate('.baja','click',function(){
+    $id = $(this).data("user");
+    $btn = $(this);
+    console.log($id);
+    $confirmacion = confirm("Esá seguro de esta operación? No se podrá revertir en un futuro.");
+    if($confirmacion){
+      $.ajax({
+        url: '/baja',
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        dataType: 'json',
+        data: {
+          id: $id
+        },
+      })
+      .done(function(response) {
+        $btn.removeClass("btn-danger");
+        $btn.removeClass("baja");
+        $btn.addClass("darAlta");
+        $btn.addClass("btn-success");
+        $btn.text("Activar");
+      })
+      .fail(function(xhr, responseText, error) {
+        alert("No se pudo borrar el usuario, intente más tarde");
+        console.log(xhr.responseText);
+      });
+    }
+  });
 
 
+  $(document).delegate('.darAlta','click',function(){
+    $id = $(this).data("user");
+    $btn = $(this);
+    console.log($id);
+    $confirmacion = confirm("Esá seguro de esta operación? No se podrá revertir en un futuro.");
+    if($confirmacion){
+      $.ajax({
+        url: '/activar',
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        dataType: 'json',
+        data: {
+          id: $id
+        },
+      })
+      .done(function(response) {
+        $btn.removeClass("btn-success");
+        $btn.removeClass("darAlta");
+        $btn.addClass("baja");
+        $btn.addClass("btn-danger");
+        $btn.text("Dar de baja");
+      })
+      .fail(function(xhr, responseText, error) {
+        alert("No se pudo borrar el usuario, intente más tarde");
+        console.log(xhr.responseText);
+      });
+    }
+  });
 
 
-
-  //Aveno
-
-    $boton=$(this)    $(".alta").click(function(){
-        sendLocalRequest(
-            $.parseJSON($(this).attr('data-user')).id,
-            'alta',
-            $(this)
-        )
-    })
-
-    $(".baja").click(function(){
-        sendLocalRequest(
-            $.parseJSON($(this).attr('data-user')).id,
-            'baja',
-            $(this)
-        )
-    })
-
-})
+});
+/*
 
 
 function sendLocalRequest(userid, URL, boton){
@@ -50,6 +95,7 @@ function sendLocalRequest(userid, URL, boton){
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
+        dataType: 'json',
         data:{
             id: userid
         },
@@ -65,3 +111,4 @@ function sendLocalRequest(userid, URL, boton){
         console.log("error: ", error)
     })
 }
+*/

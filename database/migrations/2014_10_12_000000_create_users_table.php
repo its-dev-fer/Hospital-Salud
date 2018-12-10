@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
           $table->string('telefono_casa')->nullable();
           $table->string('direccion')->nullable();
           $table->string('foto')->nullable();
+          $table->enum('estado',['activo','inactivo'])->nullable();
           $table->rememberToken();
           $table->timestamps();
         });

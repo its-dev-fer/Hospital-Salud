@@ -18,6 +18,6 @@ class SoloQuimicos
       if(Auth::check() && Auth::user()->rol == "personal" || Auth::user()->rol == "administrador")
         return $next($request);
       else
-        abort(404);
+        abort(406);
     }
 }

@@ -27,13 +27,13 @@ $(document).ready(function(){
         var num_registro = $('#num_registro').val()
         var nombre_desechador = $('#nombre_desechador').val()
         var nombre_pbi = $('#nombre_ppbi').val()
-        
+
 
         $.ajax({
             url: "/desechos/insert",
             method: 'GET',
             data:{
-                num_prog:num_prog, 
+                num_prog:num_prog,
                 num_unidad:num_unidad,
                 caducidad:caducidad,
                 defecto_conservacion:defecto_conservacion,
@@ -46,11 +46,14 @@ $(document).ready(function(){
                 if(data === "sucess"){
                     $("#success").show()
                     setTimeout(function(){ $("#success").hide(); }, 5000);
-                    fetch_customer_data(page, 15)                    
+                    fetch_customer_data(page, 15)
                 }else{
                     $("#danger").show()
-                    setTimeout(function(){ $("#danger").hide(); }, 5000);  
+                    setTimeout(function(){ $("#danger").hide(); }, 5000);
                 }
+            },
+            error:function(xhr,a,b){
+              console.log(xhr.responseText);
             }
         })
     })

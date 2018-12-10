@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Desechos</title>
-        <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ URL::asset('css/styleDesechos.css') }}" rel="stylesheet">
-        <script src="{{ URL::asset('js/main.js') }}"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="{{ URL::asset('js/Tables.js') }}"></script>
-    </head>
-    <body >
-        <div class="alert alert-success" id="success" role="alert">
+@extends('layouts.app')
+
+@section('content')
+        <div class="alert alert-success" style="
+        position: fixed;
+        bottom: 2px;
+        right: 10px;
+        z-index: 10;
+        display: none;
+        width: 30%;
+        " id="success" role="alert">
             Datos guardados exitosamente
         </div>
-        <div class="alert alert-danger" id="danger" role="alert">
+        <div class="alert alert-danger" style="
+        position: fixed;
+        bottom: 2px;
+        right: 10px;
+        z-index: 10;
+        display: none;
+        width: 30%;
+        " id="danger" role="alert">
             Ups, algo salio mal. Verifica tus datos!
         </div>
-        <h1>Desecho de unidades</h1>
         <!-- Show table with Fifteen elements-->
         <div class="table-responsive">
             <table class="table table-bordered">
-                <thead>
+                <thead class="thead-dark">
                     <tr>
                         <th scope="col" id="col_1"># de unidad</th>
                         <th scope="col" id="col_2"># de prog</th>
@@ -40,9 +42,9 @@
                 </tbody>
             </table>
         </div>
-        <nav aria-label="Page navigation example">
+        <nav aria-label="Page navigation example" style="margin-left:10px">
             <ul class="pagination">
-                @php 
+                @php
                     $sizeArray = ceil(($size/15));
                 @endphp
                 @for($i=1; $i <= $sizeArray; $i++)
@@ -101,7 +103,7 @@
                 </div>
                 <input type="text" class="form-control" name="nombre_ppbi" id="nombre_ppbi" required>
             </div>
-            
+
             <input type="button" value="Insertar" id="buttonInsert">
 
         <!-- Options of table -->
@@ -114,7 +116,7 @@
             </div>
             <div style="display: flex">
                 <input type="checkbox" id="3" value="show"  onclick="_onclick(this.id)"><p># de unidad</p>
-            </div>  
+            </div>
             <div style="display: flex">
                 <input type="checkbox" id="4" value="show"  onclick="_onclick(this.id)" ><p>Caducidad</p>
             </div>
@@ -134,5 +136,5 @@
                 <input type="checkbox" id="9" value="show"  onclick="_onclick(this.id)"><p>Nombre del personal PBI</p>
             </div>
         </div>
-    </body>
-</html>
+        <script src="{{ URL::asset('js/Tables.js') }}"></script>
+        @endsection

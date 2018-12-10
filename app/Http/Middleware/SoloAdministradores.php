@@ -15,9 +15,11 @@ class SoloAdministradores
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->rol == "administrador")
-          return $next($request);
-        else
-          abort(404);
+        if(Auth::check() && Auth::user()->rol == "administrador" && Auth::user()->estado == "activo"){
+            return $next($request);
+        }else
+        {
+            abort(406);
+        }
     }
 }

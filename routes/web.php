@@ -28,5 +28,6 @@ Route::prefix('desechos')->group(function () {
 });
 
 Route::get('/personales', 'PersonalController@personales')->middleware('administrador');
-Route::post('/alta', 'PersonalController@alta')->middleware('administrador');
+Route::post('/activar', 'PersonalController@activar')->middleware('administrador');
 Route::post('/baja', 'PersonalController@baja')->middleware('administrador');
+Route::post('/newUser','PersonalController@create')->middleware('administrador');
