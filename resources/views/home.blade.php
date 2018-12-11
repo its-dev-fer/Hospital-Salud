@@ -2,15 +2,15 @@
 
 @section('content')
 <div class="row" id="cpanel">
-  <div class="col-2 full_screen lado_izquierdo">
-    <div class="row">
+  <div class="col-2 full_screen lado_izquierdo" style="background-color: #00BFA5 !important;">
+    <div class="row" >
       @if(Auth::user()->rol == "administrador")
-      <a id="_2_welcome" href="#" class="izq_item btn orange_btn"><i class="fas fa-home"></i>&nbsp;Bienvenida</a>
-      <a id="_2_notifications" href="#" class="izq_item btn coral_btn"><i class="fas fa-bell"></i>&nbsp;Notificaciones</a>
-      <a href="{{ url('/personales') }}" class="izq_item btn otro_orange_btn"><i class="fas fa-user"></i>&nbsp;Administrar personal</a>
+      <a id="_2_welcome" href="#" class="izq_item btn btn_options_home"><i class="fas fa-home"></i>&nbsp;Bienvenida</a>
+      <a id="_2_notifications" href="#" class="izq_item btn btn_options_home"><i class="fas fa-bell"></i>&nbsp;Notificaciones</a>
+      <a href="{{ url('/personales') }}" class="izq_item btn btn_options_home"><i class="fas fa-user"></i>&nbsp;Administrar personal</a>
       @endif
 
-      <a id="_2_bitacoras_menu" href="#" class="izq_item btn pink_btn"><i class="fas fa-pencil-alt"></i>&nbsp;Gestionar bitácoras</a>
+      <a id="_2_bitacoras_menu" href="#" class="izq_item btn btn_options_home"><i class="fas fa-pencil-alt"></i>&nbsp;Gestionar bitácoras</a>
     </div>
   </div>
   @if(Auth::user()->rol == "administrador")
@@ -23,7 +23,7 @@
         <div class="info_card">
           <div class="row">
             <div class="col-1">
-              <i class="fas fa-users single_icon"></i>
+              <i class="fas fa-users single_icon circle_icon"></i>
             </div>
             <div class="col-10">
               <h3>{{ $usersCount }} usuarios</h3>
@@ -44,12 +44,11 @@
           </div>
         </div>
       </div>
-
-      <div class="col-3">
-        <div class="alert  alert-dark" id="importante" role="alert">
-          {{ $message }}
+        
+        <div class="alert " id="message_user"  role="alert">
+          {{ $message }} {{ Auth::user()->rol }}
         </div>
-      </div>
+
     </div>
   </div>
   <div class="col-10 full_screen lado_derecho" id="notifications_tab" style="display:none">
@@ -80,20 +79,7 @@
               <h5>Bitácoras de compatibilidad</h5>
             </div>
             <div class="col-4">
-              <a href="{{ url('/compatibilidad') }}" class="btn btn-success">Administrar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="info_card">
-          <div class="row">
-            <div class="col-8">
-              <h5>Bitácoras de egresos</h5>
-            </div>
-            <div class="col-4">
-              <a href="#" class="btn btn-success">Administrar</a>
+              <a href="{{ url('/compatibilidad') }}" class="btn btn-success ">Administrar</a>
             </div>
           </div>
         </div>
@@ -112,17 +98,7 @@
         </div>
       </div>
 
-      <div class="col-6">
-        <div class="info_card">
-          <div class="row">
-            <div class="col-8">
-              <h5>Libreta de egresos</h5>
-            </div>
-            <div class="col-4">
-              <a href="#" class="btn btn-success">Administrar</a>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>

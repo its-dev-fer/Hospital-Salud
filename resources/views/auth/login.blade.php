@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin-top: 20px;">
+<div class="container" id="login_background" style="margin-top: 4%">
     <div class="row justify-content-center">
         <div class="col-md-8 justify-content-center">
           <div class="login_card text-center">
-            <h5 class="texto-degradado no_select">Hospital Regional de Alta Especialidad "Ciudad Salud"</h5>
+            <h1 class="texto-degradado no_select">Bienvenido</h1>
+            <i class="fas fa-user-circle" style="font-size: 250px;"></i>
             <form method="POST" action="{{ route('login') }}">
               @csrf
-              <div class="form-group row">
-                <label for="email" class="col-sm-4 col-form-label text-md-right" style="color:#FFFFFF">Correo electrónico: </label>
-                <div class="col-md-6">
-                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+              <div class="form-group row justify-content-center">
+                <div class="col-md-6 ">
+                    <input id="email" type="email" placeholder="Correo electrónico" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                     @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
@@ -20,11 +20,9 @@
                     @endif
                 </div>
               </div>
-              <div class="form-group row">
-                  <label for="password" class="col-md-4 col-form-label text-md-right" style="color:#FFFFFF">Contraseña: </label>
-
+              <div class="form-group row justify-content-center">
                   <div class="col-md-6">
-                      <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                      <input id="password" placeholder="Contraseña" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                       @if ($errors->has('password'))
                           <span class="invalid-feedback" role="alert">
@@ -33,8 +31,8 @@
                       @endif
                   </div>
               </div>
-              <div class="form-group row">
-                  <div class="col-md-6 offset-md-4">
+              <div class="form-group row justify-content-center">
+                  <div class="col-md-6">
                       <div class="form-check">
                           <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 

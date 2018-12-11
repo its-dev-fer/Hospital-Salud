@@ -28,6 +28,11 @@ $(document).ready(function(){
         var nombre_desechador = $('#nombre_desechador').val()
         var nombre_pbi = $('#nombre_ppbi').val()
 
+        var all_row=document.getElementsByClassName("input-form-desechos");
+
+        for(var i=0;i<all_row.length;i++){
+            all_row[i].value="";
+        }
 
         $.ajax({
             url: "/desechos/insert",
