@@ -54,86 +54,111 @@
                 @endfor
             </ul>
         </nav>
-        <!-- Insert -->
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de prog</span>
-                </div>
-                <input type="text" class="form-control" name="num_prog" id="num_prog" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de unidades</span>
-                </div>
-                <input type="number" class="form-control" name="num_unidad" id="num_unidad" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Caducidad</span>
-                </div>
-                <input type="date" class="form-control" name="caducidad" id="caducidad" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Defecto de conversión</span>
-                </div>
-                <input type="text" class="form-control" name="defecto_conservacion" id="defecto_conservacion" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de cs</span>
-                </div>
-                <input type="text" class="form-control" name="num_cs" id="num_cs" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Numero de registro</span>
-                </div>
-                <input type="text" class="form-control" name="num_registro" id="num_registro" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre de quien desecha</span>
-                </div>
-                <input type="text" class="form-control" name="nombre_desechador" id="nombre_desechador" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre del personal PBI</span>
-                </div>
-                <input type="text" class="form-control" name="nombre_ppbi" id="nombre_ppbi" required>
-            </div>
-
-            <input type="button" value="Insertar" id="buttonInsert">
-
         <!-- Options of table -->
-        <div>
-            <div style="display: flex">
-                <input type="checkbox"  id="1" value="show"  onclick="_onclick(this.id)" ><p># de unidades</p>
+
+        <div class="btn-group dropdown btn_options">
+            <button type="button" class="dropdown-toggle" style="background-color: transparent; border:0px; color: #00BFA5; margin-top: 3px; " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Opciones
+            </button>
+            <div class="dropdown-menu">
+                <div class="dropdown-item" data-toggle="collapse" href="#collapseExample">Columnas</div>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item option-item" style="display: flex">
+                    <input type="checkbox"  id="1" value="show"  onclick="_onclick(this.id)" ><p># de unidades</p>
+                </div>
+                <div class="dropdown-item option-item" style="display: flex">
+                    <input type="checkbox" id="2" value="show"  onclick="_onclick(this.id)" ><p># de prog</p>
+                </div>
+                <div class="dropdown-item option-item" style="display: flex">
+                    <input type="checkbox" id="3" value="show"  onclick="_onclick(this.id)"><p># de unidad</p>
+                </div>
+                <div class="dropdown-item option-item" style="display: flex">
+                    <input type="checkbox" id="4" value="show"  onclick="_onclick(this.id)" ><p>Caducidad</p>
+                </div>
+                <div class="dropdown-item option-item" style="display: flex">
+                    <input type="checkbox" id="5" value="show"  onclick="_onclick(this.id)"><p>Defecto de conversión</p>
+                </div>
+                <div class="dropdown-item option-item" style="display: flex">
+                    <input type="checkbox" id="6" value="show"  onclick="_onclick(this)"><p># de cs</p>
+                </div>
+                <div class="dropdown-item option-item" style="display: flex">
+                    <input type="checkbox" id="7" value="show"  onclick="_onclick(this.id)" ><p># de registro</p>
+                </div>
+                <div class="dropdown-item option-item" style="display: flex">
+                    <input type="checkbox" id="8" value="show"  onclick="_onclick(this.id)" ><p>Nombre del que desecha</p>
+                </div>
+                <div class="dropdown-item option-item" style="display: flex">
+                    <input type="checkbox" id="9" value="show"  onclick="_onclick(this.id)"><p>Nombre del personal PBI</p>
+                </div>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item option-item" data-toggle="modal" data-target="#exampleModal">Formulario</div>
             </div>
-            <div style="display: flex">
-                <input type="checkbox" id="2" value="show"  onclick="_onclick(this.id)" ><p># de prog</p>
-            </div>
-            <div style="display: flex">
-                <input type="checkbox" id="3" value="show"  onclick="_onclick(this.id)"><p># de unidad</p>
-            </div>
-            <div style="display: flex">
-                <input type="checkbox" id="4" value="show"  onclick="_onclick(this.id)" ><p>Caducidad</p>
-            </div>
-            <div style="display: flex">
-                <input type="checkbox" id="5" value="show"  onclick="_onclick(this.id)"><p>Defecto de conversión</p>
-            </div>
-            <div style="display: flex">
-                <input type="checkbox" id="6" value="show"  onclick="_onclick(this)"><p># de cs</p>
-            </div>
-            <div style="display: flex">
-                <input type="checkbox" id="7" value="show"  onclick="_onclick(this.id)" ><p># de registro</p>
-            </div>
-            <div style="display: flex">
-                <input type="checkbox" id="8" value="show"  onclick="_onclick(this.id)" ><p>Nombre del que desecha</p>
-            </div>
-            <div style="display: flex">
-                <input type="checkbox" id="9" value="show"  onclick="_onclick(this.id)"><p>Nombre del personal PBI</p>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Formulario para desechos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Insert -->
+                    <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Numero de prog</span>
+                            </div>
+                            <input type="text" class="form-control input-form-desechos" name="num_prog" id="num_prog" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Numero de unidades</span>
+                            </div>
+                            <input type="number" class="form-control input-form-desechos" name="num_unidad" id="num_unidad" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Caducidad</span>
+                            </div>
+                            <input type="date" class="form-control input-form-desechos" name="caducidad" id="caducidad" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Defecto de conversión</span>
+                            </div>
+                            <input type="text" class="form-control input-form-desechos" name="defecto_conservacion" id="defecto_conservacion" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Numero de cs</span>
+                            </div>
+                            <input type="text" class="form-control input-form-desechos" name="num_cs" id="num_cs" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Numero de registro</span>
+                            </div>
+                            <input type="text" class="form-control input-form-desechos" name="num_registro" id="num_registro" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Nombre de quien desecha</span>
+                            </div>
+                            <input type="text" class="form-control input-form-desechos" name="nombre_desechador" id="nombre_desechador" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Nombre del personal PBI</span>
+                            </div>
+                            <input type="text" class="form-control input-form-desechos" name="nombre_ppbi" id="nombre_ppbi" required>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-success"  value="Insertar" id="buttonInsert">
+                    <input type="button" class="btn btn-secondary" value="Cerrar" data-dismiss="modal">
+                </div>
+                </div>
             </div>
         </div>
         <script src="{{ URL::asset('js/Tables.js') }}"></script>

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 20px;">
     <div class="row justify-content-center">
         <div class="col-md-8">
           <div class="login_card text-center">
-            <h5 class="texto-degradado no_select">Registro de personal</h5>
+            <h2 class="texto-degradado no_select">Registro de personal</h2>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="form-group row">
